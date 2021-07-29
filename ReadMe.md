@@ -45,7 +45,9 @@ python scripts/2d_launch_esim.py --launch_file_path="/tmp/esim.launch"
 你可以在[here](https://drive.google.com/drive/folders/1F6fNgZFmMvGkw6sAwDFE7j8Q7EH3TMve?usp=sharing)获得前景图像。  
 你可以在[here](https://drive.google.com/drive/folders/1ILoFnR5BHR17F0VGEzR0JIBfisw1nkc4?usp=sharing)获得相关的配置文件和场景文件。  
 最后运行`scripts/generate_preset.py`例如：
-```python scripts/generate_preset.py /path/to/config/files```
+```
+python scripts/generate_preset.py /path/to/config/files
+```
 
 
 
