@@ -17,17 +17,16 @@ esim配置生成器可以生成esim（[ESIM](https://github.com/uzh-rpg/rpg_esim
 
 
 ## 环境要求
-如果想生成配置文件必须保证ros环境并安装esim，安装步骤：[here](https://github.com/uzh-rpg/rpg_esim/wiki/Installation)，如果安装成功ssim命令应该可以正常在终端内执行。
+如果想生成配置文件必须保证ros环境并安装esim，安装步骤：[here](https://github.com/uzh-rpg/rpg_esim/wiki/Installation)，如果安装成功ssim命令应该可以正常在终端内执行。  
 
-`foreground_images` 文件夹里的图像文件是最终在数据序列里前景运动的图像，其图像格式必须是4通道的png文件，在`tools`文件夹内有`jpg_to_png`小工具转换jpg到png。
-`background_images` 文件夹内则是数据序列里的背景静态图像，其图像格式必须是jpg文件。
-`generator_config` 文件夹里有不同参数设置的文件，例如前景图像的飞行速度等。可以按照自己的需求去调整使用。
-
+`foreground_images` 文件夹里的图像文件是最终在数据序列里前景运动的图像，其图像格式必须是4通道的png文件，在`tools`文件夹内有`jpg_to_png`小工具转换jpg到png。  
+`background_images` 文件夹内则是数据序列里的背景静态图像，其图像格式必须是jpg文件。  
+`generator_config` 文件夹里有不同参数设置的文件，例如前景图像的飞行速度等。可以按照自己的需求去调整使用。    
 
 
 ## 如何使用
-首先需要准备前景、背景图像，可以是自定义的也可以从一些数据集里抽取。
-随后参考`generator_config`中的例子根据自己的需求确定参数设置文件。
+首先需要准备前景、背景图像，可以是自定义的也可以从一些数据集里抽取。  
+随后参考`generator_config`中的例子根据自己的需求确定参数设置文件。  
 运行`scripts/generate_esim2d_scenes.py`并输入参数设置文件，同时也可以在执行命令时修改参数，已经在设置文件内定义的参数会被覆盖。执行例子：
 ```
 python scripts/generate_esim2d_scenes.py generator_config/slow_motions.json --scene_id=0 --contrast_threshold_mean=0.3 --contrast_threshold_sigma=0.1
@@ -43,13 +42,13 @@ python scripts/2d_launch_esim.py --launch_file_path="/tmp/esim.launch"
 
 
 ## 使用现有的配置文件生成数据集
-你可以在[here](https://drive.google.com/drive/folders/1F6fNgZFmMvGkw6sAwDFE7j8Q7EH3TMve?usp=sharing)获得前景图像。
-你可以在[here](https://drive.google.com/drive/folders/1ILoFnR5BHR17F0VGEzR0JIBfisw1nkc4?usp=sharing)获得相关的配置文件和场景文件。
+你可以在[here](https://drive.google.com/drive/folders/1F6fNgZFmMvGkw6sAwDFE7j8Q7EH3TMve?usp=sharing)获得前景图像。  
+你可以在[here](https://drive.google.com/drive/folders/1ILoFnR5BHR17F0VGEzR0JIBfisw1nkc4?usp=sharing)获得相关的配置文件和场景文件。  
 最后运行`scripts/generate_preset.py`例如：
 ```python scripts/generate_preset.py /path/to/config/files```
 
 
 
 ## 更进一步的处理
-`h5_generator.sh`可以帮助你批量的将rosbag转换为`.h5`文件以供导入训练模型。
-`tools/loader_generator_fromh5.py`小工具可以用来生成导入训练模型所需的文件列表csv。
+`h5_generator.sh`可以帮助你批量的将rosbag转换为`.h5`文件以供导入训练模型。  
+`tools/loader_generator_fromh5.py`小工具可以用来生成导入训练模型所需的文件列表csv。  
