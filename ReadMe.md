@@ -10,8 +10,10 @@ This code allows generating flying chairs style sequences for the Multi-Object-2
 }
 ```
 
+
 ## 关于esim配置生成器
 esim配置生成器可以生成esim（[ESIM](https://github.com/uzh-rpg/rpg_esim)）数据仿真器的配置文件。
+
 
 
 ## 环境要求
@@ -20,6 +22,7 @@ esim配置生成器可以生成esim（[ESIM](https://github.com/uzh-rpg/rpg_esim
 `foreground_images` 文件夹里的图像文件是最终在数据序列里前景运动的图像，其图像格式必须是4通道的png文件，在`tools`文件夹内有`jpg_to_png`小工具转换jpg到png。
 `background_images` 文件夹内则是数据序列里的背景静态图像，其图像格式必须是jpg文件。
 `generator_config` 文件夹里有不同参数设置的文件，例如前景图像的飞行速度等。可以按照自己的需求去调整使用。
+
 
 
 ## 如何使用
@@ -38,11 +41,13 @@ python scripts/2d_launch_esim.py --launch_file_path="/tmp/esim.launch"
 最终将会得到一个rosbag数据包，其中包含了模拟事件信息与图像真值，以上的操作可以使用`2d_simulator_generator.sh`自动完成，请按需修改。
 
 
+
 ## 使用现有的配置文件生成数据集
 你可以在[here](https://drive.google.com/drive/folders/1F6fNgZFmMvGkw6sAwDFE7j8Q7EH3TMve?usp=sharing)获得前景图像。
 你可以在[here](https://drive.google.com/drive/folders/1ILoFnR5BHR17F0VGEzR0JIBfisw1nkc4?usp=sharing)获得相关的配置文件和场景文件。
 最后运行`scripts/generate_preset.py`例如：
 ```python scripts/generate_preset.py /path/to/config/files```
+
 
 
 ## 更进一步的处理
